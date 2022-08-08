@@ -1,20 +1,20 @@
 import React from "react";
 import Logo from "../assets/Logo.png"
 import { Link } from "react-router-dom";
-import "../styles/Home.css";
+import "../styles/Landing.css";
 
-function Home() {
+function Landing() {
   return (
-    <div className="home">
+    <div className="landing">
       <div className="topBar">
         <img src={Logo} alt="" />
         <h1> Colegio Del Espiritu Santo</h1>
       </div>
       <div className="main">
         <div className="headerContainer">
-          <h1> Gestor de asistencias </h1>
+          <h1> Gestor asistencias </h1>
           <p> Ingrese con sus datos</p>
-          <Link to="/contact">
+          <Link to="/login">
             <button> Log in </button>
           </Link>
         </div>
@@ -23,4 +23,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Landing;
