@@ -1,5 +1,4 @@
 import "./App.css";
-import Footer from "./components/Footer";
 import Home from "./pages/Landing";
 import Login from "./pages/Login"
 import Dashboard from "./pages/Dashboard"
@@ -16,7 +15,6 @@ function App() {
           <Route path="/dashboard" exact component={Dashboard} />
           <Route path="/attendence" exact component={Attendence} />
         </Switch>
-        <Footer />
       </Router>
     </div>
   );

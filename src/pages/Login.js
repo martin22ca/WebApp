@@ -1,29 +1,33 @@
+import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Login.css";
+import Logo from "../assets/Logo.png"
 
 function Login() {
 
+  const [user, setUser] = useState('');
+  const [pwd, setPwd] = useState('');
+  const [errMsg, setErrMsg] = useState('');
+  const [success, setSuccess] = useState(false);
+
   return (
-    <div className="login">
-      <div className="leftSide"></div>
-      <div className="rightSide">
-        <h1> Ingreso</h1>
-        <h2>{/* errore */}</h2>
-        <form id="Login-form" method="POST">
-          <div className="wrapper">
-            <label htmlFor="Username">Usuario</label>
-            <input name="Username" placeholder="Inserte Usuario..." type="Username" />
-          </div>
-          <div className="wrapper">
-            <label htmlFor="password">Contraseña</label>
-            <input name="password" placeholder="Inserte contrasesña..." type="password" />
-          </div>
-          <div className="wrapper">
-            <Link to={"/dashboard"}>
-              <button type="submit"> Log In</button>
-            </Link>
-          </div>
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+
+        <div class="fadeIn first">
+          <img src={Logo} id="icon" alt="User Icon" />
+        </div>
+
+        <form>
+          <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" />
+          <input type="text" id="password" class="fadeIn second" name="login" placeholder="password" />
+          <input type="submit" class="fadeIn second" value="Log In" />
         </form>
+
+        <div id="formFooter">
+          <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+
       </div>
     </div>
   );

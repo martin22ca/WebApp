@@ -27,7 +27,7 @@ function Attendence() {
             { image: pic4, name: "Martin Caceres", status: "red" },
             { image: pic5, name: "Catalina Paschini", status: "red" }],
         unknown: [
-            { image: pic6, name: "unknown", status: "yellow" },
+            {},
         ]
     }
 
@@ -47,31 +47,34 @@ function Attendence() {
 
     return (
         <>
-            <Navbar />
-            <Container fluid className='card_container'>
-                <Row>
-                    <Col className='card_col'>
-                        <div className='card_grid' >{alumni.present.map(renderCard)}</div>
-                    </Col>
-                    <Col className='card_col'>
-                        <div className='card_grid'>{alumni.missing.map(renderCard)} </div>
-                    </Col>
-                    <Col className='card_col'>
-                        <div className='card_grid'>{alumni.unknown.map(renderCard)}</div>
-                    </Col>
-                </Row>
-            </Container>
-
+            <div className='bg'>
+                <Navbar />
+                <Container fluid className='card_container'>
+                    <Row>
+                        <h4 className=''>Año: 5to</h4>
+                        <h4 className=''>Division: C</h4>
+                        <h4 className=''>Dia: 08/08/2022</h4>
+                    </Row>
+                    <Row>
+                        <Col><h3 className='card_col_title'>Presentes</h3></Col>
+                        <Col><h3 className='card_col_title'>Ausentes</h3></Col>
+                        <Col><h3 className='card_col_title'>Desconocido</h3></Col>
+                    </Row>
+                    <Row>
+                        <Col className='card_col'>
+                            <div className='card_grid'>{alumni.present.map(renderCard)}</div>
+                        </Col>
+                        <Col className='card_col'>
+                            <div className='card_grid'>{alumni.missing.map(renderCard)} </div>
+                        </Col>
+                        <Col className='card_col'>
+                            <div className='card_grid'>{alumni.unknown.map(renderCard)}</div>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         </>
     )
 }
 
 export default Attendence
-
-/*  < Card style = {{ width: '18rem' }} bg = { card.status } key = { index } className = 'card_container' >
-                  <Card.Img variant="top" src={card.image} />
-                  <Card.Body>
-                      <Card.Title>{card.name}</Card.Title>
-                      <Button variant="primary">Detalles</Button>
-                  </Card.Body>
-              </Card >*/
